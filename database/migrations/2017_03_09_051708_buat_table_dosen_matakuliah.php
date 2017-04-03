@@ -17,7 +17,7 @@ class BuatTableDosenMatakuliah extends Migration
             $table->integer('dosen_id',false,true);
             $table->foreign('dosen_id')->references('id')->on('dosen');
             $table->integer('matakuliah_id',false,true);
-            $table->foreign('matakuliah_id')->references('id')->on('matakuliah');
+            $table->foreign('matakuliah_id')->references('id')->on('matakuliah')->onDelete('cascade');
             $table->timestamps();
         });
     }

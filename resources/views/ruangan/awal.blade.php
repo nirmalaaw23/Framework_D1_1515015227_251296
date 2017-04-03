@@ -10,16 +10,17 @@
 	<table class="table">
 		<thead>
 		<tr>
-			<th>id</th>
-			<th>title</th>
-					</tr>
+			<th>No.</th>
+			<th>Title</th>
+			<th>Aksi</th>
+		</tr>
 		</thead>
 		<tbody>
 			<?php $x=1;?>
 			@foreach ($data as $ruangan)
 				<tr>
 					<td>{{ $x++ }}</td>
-					<td>{{ $ruangan->id or 'id kosong'}}</td>
+					
 					<td>{{ $ruangan->title or 'title kosong'}}</td>
 					<td>
 						<div class="btn-group" role="group">
@@ -32,7 +33,7 @@
 							</a>
 
 							<a href="{{url('ruangan/hapus/'.$ruangan->id)}}" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Hapus">
-								<i class="fa fa-premove"></i>
+								<i class="fa fa-remove"></i>
 							</a>
 						</div>
 

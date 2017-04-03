@@ -10,7 +10,8 @@
 	
 	<table class="table">
 		<tr>
-			<td>Username:</td>
+			<td>Username</td>
+			<td>:</td>
 			<td>{{$pengguna->username}}</td>
 		</tr>
 

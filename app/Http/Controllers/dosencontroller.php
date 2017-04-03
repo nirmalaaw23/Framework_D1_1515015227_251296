@@ -9,27 +9,42 @@ use App\dosen;
 
 class dosencontroller extends Controller
 {
-    public function awal()
-	{
-		return "Hello dari dosencontroller";
+     public function awal(){
+    	return view('dosen.awal', ['data'=>dosen::all()]);
+    }
+public function tambah(){
+	return view('dosen.tambah');
 	}
-	public function tambah()
-	{
-		return $this->simpan();
-	}	
-    public function simpan()
-	{
-		$dosen = new dosen();
-		$dosen->nama = 'Nirmala Adjeng Wulandari';
-		$dosen->nip = '1115015227';
-		$dosen->alamat = 'Perum. Sempaja';
-		$dosen->pengguna_id ='1';
-		$dosen->save();
-		return "DATA DOSEN 
-						<br><br> ID : {$dosen->id} 
-						<br> Nama : {$dosen->nama} 
-						<br> NIP : {$dosen->nip} 
-						<br> Alamat : {$dosen->alamat} 
-						<br><br> Telah Di Simpan.";
-					}
-				}
+public function simpan(Request $input){
+	$dosen = new dosen;
+	$dosen->nama = $input->nama;
+	$dosen->nip = $input->nip;
+	$dosen->alamat = $input->alamat;
+	$dosen->pengguna_id = $input->pengguna_id;
+	$informasi = $dosen->save() ? 'Berhasil simpan data' : 'Gagal simpan data';
+	return redirect('dosen')->with(['informasi'=>$informasi]);
+	}
+public function edit($id){
+	$dosen = dosen::find($id);
+	return view('dosen.edit')->with(array('dosen'=>$dosen));
+	}
+public function lihat($id){
+	$dosen = dosen::find($id);
+	return view('dosen.lihat')->with(array('dosen'=>$dosen));
+}
+public function update($id, Request $input){
+	$dosen = dosen::find($id);
+	$dosen->nama = $input->nama;
+	$dosen->nip = $input->nip;
+	$dosen->alamat = $input->alamat;
+	$dosen->pengguna_id = $input->pengguna_id;
+	$informasi = $dosen->save() ? 'Berhasil update data' : 'Gagal update data';
+	return redirect('dosen')->with(['informasi'=>$informasi]);
+}
+public function hapus($id){
+	$dosen = dosen::find($id);
+	$informasi = $dosen->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
+	return redirect('dosen')->with(['informasi'=>$informasi]);
+}
+
+}

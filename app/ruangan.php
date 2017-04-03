@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class ruangan extends Model
 {
     protected $table = 'ruangan';
-	protected $fillabel = ['id','title'];
+	protected $fillabel = ['title'];
+
+	public function jadwal_matakuliah()
+	{
+    	return $this->hasMany(jadwal_matakuliah::class);
+    }
 }

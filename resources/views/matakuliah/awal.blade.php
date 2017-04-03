@@ -10,19 +10,19 @@
 	<table class="table">
 		<thead>
 		<tr>
-			<th>id</th>
-			<th>title</th>
-			<th>keterangan</th>
-
-					</tr>
+			<th>No.</th>
+			<th>Title</th>
+			<th>Keterangan</th>
+			<th>Aksi</th>
+			</tr>
 		</thead>
 		<tbody>
-			<?php $x=1;?>
+			<?php $x=1; ?>
 			@foreach ($data as $matakuliah)
 				<tr>
 					<td>{{ $x++ }}</td>
-					<td>{{ $matakuliah->id or 'id kosong'}}</td>
 					<td>{{ $matakuliah->title or 'title kosong'}}</td>
+					<td>{{ $matakuliah->keterangan or 'keterangan kosong'}}</td>
 					<td>
 						<div class="btn-group" role="group">
 							<a href="{{url('matakuliah/edit/'.$matakuliah->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="Ubah">

@@ -10,7 +10,8 @@
 	
 	<table class="table">
 		<tr>
-			<td>Id:</td>
+			<td>Id</td>
+			<td>:</td>
 			<td>{{$ruangan->id}}</td>
 		</tr>
 

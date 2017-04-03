@@ -33,7 +33,7 @@ class ruangancontroller extends Controller
     public function lihat($id)
     {
         $ruangan = ruangan::find($id);
-        return view('ruangan.edit')->with(array('ruangan'=>$ruangan));
+        return view('ruangan.lihat')->with(array('ruangan'=>$ruangan));
     }
 
     public function update($id, request $input)

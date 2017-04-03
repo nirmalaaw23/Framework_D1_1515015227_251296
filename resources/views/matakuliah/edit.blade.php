@@ -4,10 +4,10 @@
 	<div class="panel-heading">
 		<strong><a href="{{url('matakuliah')}}">
 		<i class="fa text-default fa-chevron-left"></i>
-		</a>Perbarui data Matakuliah</strong>
+		</a>Perbarui Data Matakuliah</strong>
 	</div>
 		{!! Form::model($matakuliah,['url'=>'matakuliah/edit/'.$matakuliah->id,'class'=>'form-horizontal'])!!}
-		@include('matakuliah.form.form')		
+		@include('matakuliah.form')		
 		<div style="width: 100%;text-align: right;">
 			<button class="btn btn-info">
 				<i class="fa fa-save"></i>Perbarui

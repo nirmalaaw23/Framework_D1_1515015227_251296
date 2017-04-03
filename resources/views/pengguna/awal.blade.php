@@ -25,7 +25,7 @@
 					<td>{{ $pengguna->password or 'password kosong'}}</td>
 					<td>
 						<div class="btn-group" role="group">
-							<a href="{{url('pengguna/edit/'.$pengguna)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="Ubah">
+							<a href="{{url('pengguna/edit/'.$pengguna->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="Ubah">
 								<i class="fa fa-pencil"></i>
 							</a>
 
@@ -34,7 +34,7 @@
 							</a>
 
 							<a href="{{url('pengguna/hapus/'.$pengguna->id)}}" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Hapus">
-								<i class="fa fa-premove"></i>
+								<i class="fa fa-remove"></i>
 							</a>
 						</div>
 

@@ -34,14 +34,14 @@ class penggunacontroller extends Controller
     public function lihat($id)
     {
         $pengguna = pengguna::find($id);
-        return view('pengguna.edit')->with(array('pengguna'=>$pengguna));
+        return view('pengguna.lihat')->with(array('pengguna'=>$pengguna));
     }
 
     public function update($id, request $input)
     {
         $pengguna = pengguna::find($id);
         $pengguna->username = $input->username;
-        $pengguna->username = $input->password;
+        $pengguna->password = $input->password;
         $informasi = $pengguna->save() ? 'Berhasil update data' : 'Gagal update data';
         return redirect('pengguna')->with(['informasi'=>$informasi]);
     }

@@ -21,6 +21,7 @@ class matakuliahcontroller extends Controller
     {
     	$matakuliah = new matakuliah();
     	$matakuliah->title = $input->title;
+        $matakuliah->keterangan = $input->keterangan;
     	$informasi = $matakuliah->save() ? 'Berhasil simpan data' : 'Gagal simpan data';
     	return redirect('matakuliah')->with(['informasi'=>$informasi]);
     }
@@ -34,13 +35,14 @@ class matakuliahcontroller extends Controller
     public function lihat($id)
     {
         $matakuliah = matakuliah::find($id);
-        return view('matakuliah.edit')->with(array('matakuliah'=>$matakuliah));
+        return view('matakuliah.lihat')->with(array('matakuliah'=>$matakuliah));
     }
 
     public function update($id, request $input)
     {
         $matakuliah = matakuliah::find($id);
         $matakuliah->title = $input->title;
+        $matakuliah->keterangan = $input->keterangan;
         $informasi = $matakuliah->save() ? 'Berhasil update data' : 'Gagal update data';
         return redirect('matakuliah')->with(['informasi'=>$informasi]);
     }

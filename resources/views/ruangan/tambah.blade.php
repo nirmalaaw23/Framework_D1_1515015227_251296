@@ -4,11 +4,11 @@
 	<div class="panel-heading">
 		<strong><a href="{{url('ruangan')}}">
 		<i style="color: white;" class="fa text-default fa-chevron-left"></i>
-		</a>Tambah data Ruangan</strong>
+		</a>Tambah Data Ruangan</strong>
 	</div>
 
 	{!! Form::open(['class' => 'form-horizontal','url' => 'ruangan/simpan']) !!}
-		@include('ruangan/form/form')
+		@include('ruangan.form')
 		<div style="width: 100%;text-align: right;">
 			<button class="btn btn-primary">
 				<i class="fa fa-save"></i>Simpan
@@ -18,6 +18,6 @@
 			</button>
 		</div>
 		
-		{!! Form::close() !!}
+		{!!Form::close()!!}
 		</div>
 @stop

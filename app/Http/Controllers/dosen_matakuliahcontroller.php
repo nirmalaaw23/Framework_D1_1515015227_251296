@@ -11,22 +11,37 @@ class dosen_matakuliahcontroller extends Controller
 {
     public function awal()
 	{
-		return "Hello dari dosenmatakuliahcontroller";
-	}
+		return view('dosen_matakuliah.awal', ['data'=>dosen_matakuliah::all()]);
+    }
 	public function tambah()
 	{
-		return $this->simpan();
-	}	
-    public function simpan()
-	{
-		$dosen_matakuliah = new dosen_matakuliah();
-		$dosen_matakuliah->dosen_id = '111';
-		$dosen_matakuliah->matakuliah_id = '511';
-		$dosen_matakuliah->save();
-		return "DATA DOSEN MATA KULIAH 
-						<br><br> ID : {$dosen_matakuliah->id} 
-						<br> ID Dosen : {$dosen_matakuliah->dosen_id} 
-						<br> ID Mata Kuliah : {$dosen_matakuliah->matakuliah_id}  
-						<br><br> Telah Di Simpan.";
-					}
+		return view('dosen_matakuliah.tambah');
+	}
+	public function simpan(Request $input){
+		$dosen_matakuliah = new dosen_matakuliah;
+		$dosen_matakuliah->dosen_id = $input->dosen_id;
+		$dosen_matakuliah->matakuliah_id = $input->matakuliah_id;
+		$informasi = $dosen_matakuliah->save() ? 'Berhasil simpan data' : 'Gagal simpan data';
+	return redirect('dosen_matakuliah')->with(['informasi'=>$informasi]);
+	}
+public function edit($id){
+	$dosen_matakuliah = dosen_matakuliah::find($id);
+	return view('dosen_matakuliah.edit')->with(array('dosen_matakuliah'=>$dosen_matakuliah));
+	}
+public function lihat($id){
+	$dosen_matakuliah = dosen_matakuliah::find($id);
+	return view('dosen_matakuliah.lihat')->with(array('dosen_matakuliah'=>$dosen_matakuliah));
+}
+public function update($id, Request $input){
+	$dosen_matakuliah = dosen_matakuliah::find($id);
+	$dosen_matakuliah->dosen_id = $input->dosen_id;
+	$dosen_matakuliah->matakuliah_id = $input->matakuliah_id;
+	$informasi = $dosen_matakuliah->save() ? 'Berhasil update data' : 'Gagal update data';
+	return redirect('dosen_matakuliah')->with(['informasi'=>$informasi]);
+}
+public function hapus($id){
+	$dosen_matakuliah = dosen_matakuliah::find($id);
+	$informasi = $dosen_matakuliah->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
+	return redirect('dosen_matakuliah')->with(['informasi'=>$informasi]);
+}
 }

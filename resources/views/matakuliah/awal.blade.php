@@ -34,7 +34,7 @@
 							</a>
 
 							<a href="{{url('matakuliah/hapus/'.$matakuliah->id)}}" class="btn btn-danger btn-xs" data-toggle="tooltip" data-placement="top" title="Hapus">
-								<i class="fa fa-premove"></i>
+								<i class="fa fa-remove"></i>
 							</a>
 						</div>
 

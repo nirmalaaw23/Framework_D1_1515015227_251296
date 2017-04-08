@@ -49,18 +49,20 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="dropdown active">
-                        <a href="#" data-togle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Mahasiswa <span class="caret"></span></a>
-                            <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                <li><a href="{{url('Mahasiswa')}}">Data Mahasiswa</a></li>
+                        <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Mahasiswa <span class="caret"></span>
+                        </a>
+                         <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li><a href="{{url('mahasiswa')}}">Data Mahasiswa</a></li>
                                 <li class="divider"></li>
                                 <li><a href="{{url('jadwal_matakuliah')}}">Jadwal Mahasiswa</a></li>
                             </ul>
                     </li>
+
                     <li class="dropdown active">
                         <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Dosen <span class="caret"></span>
                         </a>
                          <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                <li><a href="{{url('Dosen')}}">Data Dosen</a></li>
+                                <li><a href="{{url('dosen')}}">Data Dosen</a></li>
                                 <li class="divider"></li>
                                 <li><a href="{{url('dosen_matakuliah')}}">Jadwal Dosen Mengajar</a></li>
                             </ul>

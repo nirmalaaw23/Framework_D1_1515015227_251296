@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\ruangan;
+use App\mahasiswa;
 
 class ruangancontroller extends Controller
 {

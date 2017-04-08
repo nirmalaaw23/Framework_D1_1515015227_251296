@@ -21,11 +21,6 @@
 			<td>{{$dosen->alamat}}</td>
 		</tr>
 		<tr>
-			<td>Pengguna_id</td>
-			<td>:</td>
-			<td>{{$dosen->pengguna_id}}</td>
-		</tr>
-		<tr>
 			<td class="col-xs-4">Dibuat tanggal</td>
 			<td class="col-xs-1">:</td>
 			<td>{{$dosen->created_at}}</td>
@@ -33,7 +28,7 @@
 		<tr>
 			<td class="col-xs-4">Diperbarui Tanggal</td>
 			<td class="col-xs-1">:</td>
-			<td>{{$dosen->update_at}}</td>
+			<td>{{$dosen->updated_at}}</td>
 		</tr>
 	</table>
 </div>

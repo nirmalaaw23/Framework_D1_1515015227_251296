@@ -21,9 +21,14 @@
 			<td>{{$mahasiswa->alamat}}</td>
 		</tr>
 		<tr>
-			<td>Pengguna_id</td>
+			<td>Username/td>
 			<td>:</td>
-			<td>{{$mahasiswa->pengguna_id}}</td>
+			<td>{{$mahasiswa->pengguna->username}}</td>
+		</tr>
+		<tr>
+			<td>Password</td>
+			<td>:</td>
+			<td>{{$mahasiswa->pengguna->password}}</td>
 		</tr>
 		<tr>
 			<td class="col-xs-4">Dibuat tanggal</td>
@@ -33,7 +38,7 @@
 		<tr>
 			<td class="col-xs-4">Diperbarui Tanggal</td>
 			<td class="col-xs-1">:</td>
-			<td>{{$mahasiswa->update_at}}</td>
+			<td>{{$mahasiswa->updated_at}}</td>
 		</tr>
 	</table>
 </div>

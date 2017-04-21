@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\ruangan;
 use App\mahasiswa;
+use App\Http\Requests\RuanganRequest;
+
 
 class ruangancontroller extends Controller
 {
@@ -18,7 +20,7 @@ class ruangancontroller extends Controller
     {
     	return view('ruangan.tambah');
     }
-    public function simpan(request $input)
+    public function simpan(RuanganRequest $input)
     {
     	$ruangan = new ruangan();
     	$ruangan->title = $input->title;
@@ -37,7 +39,7 @@ class ruangancontroller extends Controller
         return view('ruangan.lihat')->with(array('ruangan'=>$ruangan));
     }
 
-    public function update($id, request $input)
+    public function update($id, RuanganRequest $input)
     {
         $ruangan = ruangan::find($id);
         $ruangan->title = $input->title;

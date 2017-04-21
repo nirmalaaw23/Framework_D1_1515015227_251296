@@ -15,7 +15,7 @@ class dosen extends Model
 		public function dosen_matakuliah(){
 			return $this->hasMany(dosen_matakuliah::class);
 		}
-		public function hw_getUsernameAttribute(){
+		public function getUsernameAttribute(){
 			return $this->pengguna->username;
 		}
 		public function listDosenDanNip()

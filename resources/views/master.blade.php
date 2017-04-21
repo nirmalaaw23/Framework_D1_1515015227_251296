@@ -2,6 +2,15 @@
 <html lang="en">
     <head>
     <meta charset="utf-8">
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+    @endif
         <title>@yield('page_title','Halaman awal') | Laboratorium Pemrograman FW</title>
 
         <link rel="stylesheet" type="text/css"

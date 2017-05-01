@@ -2,30 +2,19 @@
 <html lang="en">
     <head>
     <meta charset="utf-8">
-    @if (count($errors) > 0)
-    <div class="alert alert-danger">
-      <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    </div>
-    @endif
         <title>@yield('page_title','Halaman awal') | Laboratorium Pemrograman FW</title>
 
         <link rel="stylesheet" type="text/css"
         href="{{asset('component/bootstrap/dist/css/bootstrap.min.css')}} ">
         <link rel="stylesheet" type="text/css"
         href="{{asset('component/font-awesome/css/font-awesome.min.css')}} ">
-        <style type="text/css">
-
-           
+        <style type="text/css">     
             body {
                 padding-top: 70px;
                 padding-bottom: 70px;
            }
 
-           .starter-template{
+           .startter-template{
             padding: 40px 15px;
             text-align: center;
            }
@@ -38,9 +27,6 @@
             padding-top: 15px;
             text-align: right;
            }
-
-
-
         </style>
     </head>
     <body>
@@ -53,41 +39,33 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="{{url('/')}}" class="navbar-brand">laravel -5</a>
+                <a href="{{url('/')}}" class="navbar-brand">laravel-5</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="dropdown active">
-                        <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Mahasiswa <span class="caret"></span>
-                        </a>
+                        <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Mahasiswa <span class="caret"></span></a>
                          <ul class="dropdown-menu" aria-labelledby="dLabel">
                                 <li><a href="{{url('mahasiswa')}}">Data Mahasiswa</a></li>
                                 <li class="divider"></li>
                                 <li><a href="{{url('jadwal_matakuliah')}}">Jadwal Mahasiswa</a></li>
-                            </ul>
-                    </li>
-
-                    <li class="dropdown active">
-                        <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Dosen <span class="caret"></span>
-                        </a>
-                         <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                </ul>
+                                <li class="dropdown active">
+                                <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dosen<span class="caret"></span></a>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
                                 <li><a href="{{url('dosen')}}">Data Dosen</a></li>
                                 <li class="divider"></li>
-                                <li><a href="{{url('dosen_matakuliah')}}">Jadwal Dosen Mengajar</a></li>
+                                <li><a href="{{url('dosen_matakuliah')}}">Jadwal Dosen Mengajar</a></li></ul>
+                                <li class="dropdown active">
+                                  <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pengaturan<span class="caret"></span></a>
+                                  <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                    <li><a href="{{url('pengguna')}}">Pengguna</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="{{url('ruangan')}}">Ruangan</a></li>
+                                    <li><a href="{{url('matakuliah')}}">Matakuliah</a></li></ul>
+                                </li>
+                                <li><a href="{{url('logout')}}">Logout</a></li>
                             </ul>
-                    </li>
-
-                    <li class="dropdown active">
-                        <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Pengaturan <span class="caret"></span>
-                        </a>
-                         <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                <li><a href="{{url('pengguna')}}">Pengguna</a></li>
-                                <li class="divider"></li>
-                                <li><a href="{{url('ruangan')}}">ruangan</a></li>
-                                <li><a href="{{url('matakuliah')}}">matakuliah</a></li>
-                            </ul>
-                    </li>
-                </ul>
             </div><!--/.nav-collapse -->
         </div>
        </nav>
@@ -113,10 +91,9 @@
         <script type="text/javascript" src="{{ asset('component/bootstrap/dist/js/bootstrap.min.js') }}"></script>
         <script type="text/javascript">
             $(function(){
-                $('[data-toggle="tolltip"]').tolltip()
+                $('[data-toggle="tooltip"]').tooltip()
             });
         </script>
-
 </body>
 
 
